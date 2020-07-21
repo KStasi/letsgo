@@ -3,7 +3,7 @@ package worker
 import "fmt"
 
 // Worker - struct represented worker info
-type worker struct {
+type Worker struct {
 	ID          uint64
 	FirstName   string
 	LastName    string
@@ -14,11 +14,17 @@ type worker struct {
 	Salary      float32
 }
 
-func NewWorker(id uint64, FirstName, LastName, PhoneNumber, Email, Possition, Company string, Salary float32) *Worker {
-	return &worker{id, FirstName, LastName, PhoneNumber, Email, Possition, Company, Salary}
+// NewWorker - safe method to create worker struct
+func NewWorker(id uint64, firstName, lastName, phoneNumber, email, possition, company string, salary float32) *Worker {
+	return &Worker{ID: id, FirstName: firstName, LastName: lastName, PhoneNumber: phoneNumber, Email: email, Possition: possition, Company: company, Salary: salary}
 }
 
 func main() {
-	v := NewWorker(0, "Kate", "Ostin", "380976482598", "kateost@gmail.com", "Manager", "Teamdream", 1000.)
-	fmt.Println(v)
+	safeWorker := NewWorker(0, "Kate", "Ostin", "380976482598", "kateost@gmail.com", "Manager", "Teamdream", 1000.)
+	simpleWorker := Worker{0, "Tom", "Ostin", "380974320191", "roewa@gmail.com", "Manager", "Teamdream", 2000.}
+	defaultWorker := Worker{}
+
+	fmt.Println(safeWorker)
+	fmt.Println(simpleWorker)
+	fmt.Println(defaultWorker)
 }
