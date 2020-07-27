@@ -3,19 +3,19 @@ package main
 import (
 	"fmt"
 
-	. "github.com/KStasi/letsgo/workplace"
+	"github.com/KStasi/letsgo/workplace"
 )
 
 func main() {
 
-	worker := Worker{
-		HumanInfo{
+	worker := workplace.Worker{
+		workplace.Human{
 			1023232,
-			"Tom"
+			"Tom",
 			"Ostin",
-			Male,
+			workplace.Male,
 			180,
-			70
+			70,
 		},
 		"Notary",
 		"Teamdream",
@@ -23,13 +23,12 @@ func main() {
 		"380974320191",
 		"roewa@gmail.com",
 	}
-	workerMockup := Worker{}
-	lawyer := Lawyer{
-		Workers : worker,
-		Type : Social,
-		LegislationArrea : "Agro",
+	lawyer := workplace.Lawyer{
+		Workers:          worker,
+		Type:             workplace.Social,
+		LegislationArrea: "Agro",
 	}
 
-	fmt.Println(workerMockup)
 	fmt.Println(lawyer)
+	fmt.Printf("%+v\n", lawyer)
 }
