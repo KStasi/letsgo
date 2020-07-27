@@ -3,19 +3,11 @@ package main
 import (
 	"fmt"
 
-	. "github.com/KStasi/letsgo/worker"
+	. "github.com/KStasi/letsgo/workplace"
 )
 
 func main() {
-	safeWorker := NewWorker(0,
-		"Kate",
-		"Ostin",
-		"380976482598",
-		"kateost@gmail.com",
-		"Manager",
-		"Teamdream",
-		1000.,
-	)
+
 	simpleWorker := Worker{0,
 		"Tom",
 		"Ostin",
@@ -27,7 +19,6 @@ func main() {
 	}
 	defaultWorker := Worker{}
 
-	fmt.Println(safeWorker)
 	fmt.Println(simpleWorker)
 	fmt.Println(defaultWorker)
 }
