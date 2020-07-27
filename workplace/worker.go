@@ -41,20 +41,22 @@ const (
 
 // Human - struct represented person info
 type Human struct {
-	ID          uint64 `json:"id"`
-	FirstName   string `json:"first_name"`
-	LastName    string `json:"last_name"`
-	Sex         Gender `json:"gender"`
-	PhoneNumber string `json:"phone"`
-	Email       string `json:"email"`
+	ID        uint64 `json:"id"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Sex       Gender `json:"gender"`
+	Height    int    `json:"height"`
+	Weight    int    `json:"weight"`
 }
 
 // Worker - struct represented worker info
 type Worker struct {
-	HumanInfo Human   `json:"human"`
-	Possition string  `json:"possition"`
-	Company   string  `json:"company"`
-	Salary    float32 `json:"salary"`
+	HumanInfo   Human   `json:"human"`
+	Possition   string  `json:"possition"`
+	Company     string  `json:"company"`
+	Salary      float32 `json:"salary"`
+	PhoneNumber string  `json:"phone"`
+	Email       string  `json:"email"`
 }
 
 // Doctor - struct represented occupation info
