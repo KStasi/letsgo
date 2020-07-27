@@ -6,6 +6,9 @@ type Gender int
 // ProfessionType - type of profession
 type ProfessionType int
 
+// WorkType - type of profession
+type WorkType int
+
 const (
 	// Male - man
 	Male Gender = iota
@@ -13,6 +16,12 @@ const (
 	Female
 	// Hidden - Unspecified gender
 	Hidden
+)
+const (
+	// Remote - man
+	Remote WorkType = iota
+	// Office - woman
+	Office
 )
 
 const (
@@ -48,21 +57,41 @@ type Worker struct {
 	Salary    float32 `json:"salary"`
 }
 
-// Profession - struct represented occupation info
-type Profession struct {
-	WorkerInfo Worker         `json:"worker"`
-	Duties     string         `json:"duties"`
-	Type       ProfessionType `json:"type"`
+// Doctor - struct represented occupation info
+type Doctor struct {
+	Workers      Worker         `json:"workers"`
+	Type         ProfessionType `json:"type"`
+	Department   string         `json:"department"`
+	Education    string         `json:"education"`
+	WorkingHours string         `json:"working_hours"`
 }
 
-// NewWorker - safe method to create worker struct
-// func NewWorker(id uint64,
-// 	firstName string,
-// 	lastName string,
-// 	phoneNumber string,
-// 	email string,
-// 	possition string,
-// 	company string,
-// 	salary float32) Worker {
-// 	return Worker{ID: id, FirstName: firstName, LastName: lastName, PhoneNumber: phoneNumber, Email: email, Possition: possition, Company: company, Salary: salary}
-// }
+// Developer - struct represented occupation info
+type Developer struct {
+	Workers  Worker         `json:"workers"`
+	Type     ProfessionType `json:"type"`
+	WorkType WorkType       `json:"work_type"`
+}
+
+// Lawyer - struct represented occupation info
+type Lawyer struct {
+	Workers          Worker         `json:"workers"`
+	Type             ProfessionType `json:"type"`
+	LegislationArrea string         `json:"legislation_arrea"`
+}
+
+// Sportsman - struct represented occupation info
+type Sportsman struct {
+	Workers Worker         `json:"workers"`
+	Type    ProfessionType `json:"type"`
+	Rewards []string       `json:"rewards"`
+	Rank    string         `json:"rank"`
+}
+
+// Nurse - struct represented occupation info
+type Nurse struct {
+	Workers        Worker         `json:"workers"`
+	Type           ProfessionType `json:"type"`
+	Experience     int32          `json:"experience"`
+	HasOwnChildren bool           `json:"has_children"`
+}
