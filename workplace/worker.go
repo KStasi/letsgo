@@ -47,6 +47,7 @@ type Human struct {
 	Sex       Gender `json:"gender"`
 	Height    int    `json:"height"`
 	Weight    int    `json:"weight"`
+	Age       int    `json:"age"`
 }
 
 // Worker - struct represented worker info
@@ -96,4 +97,15 @@ type Nurse struct {
 	Type           ProfessionType `json:"type"`
 	Experience     int32          `json:"experience"`
 	HasOwnChildren bool           `json:"has_children"`
+}
+
+// CelebrateBirthday - method to make person older
+func (receiver *Human) CelebrateBirthday() {
+	receiver.Age++
+}
+
+// UpdateShape - method to modify person's shape
+func (receiver *Human) UpdateShape(newHeight int, newWeight int) {
+	receiver.Height = newHeight
+	receiver.Weight = newWeight
 }
