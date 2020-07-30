@@ -10,19 +10,19 @@ func main() {
 
 	worker := workplace.Worker{
 		HumanInfo: workplace.Human{
-			ID: 1023232,
+			ID:        1023232,
 			FirstName: "Tom",
-			LastName: "Ostin",
-			Sex: workplace.Male,
-			Height: 180,
-			Weight: 70,
-			Age: 20
+			LastName:  "Ostin",
+			Sex:       workplace.Male,
+			Height:    180,
+			Weight:    70,
+			Age:       20,
 		},
-		Possition: "Notary",
-		Company: "Teamdream",
-		Salary: 2000.,
+		Possition:   "Notary",
+		Company:     "Teamdream",
+		Salary:      2000.,
 		PhoneNumber: "380974320191",
-		Email: "roewa@gmail.com",
+		Email:       "roewa@gmail.com",
 	}
 	lawyer := workplace.Lawyer{
 		Workers:          worker,
