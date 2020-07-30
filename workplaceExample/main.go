@@ -29,7 +29,7 @@ func main() {
 		Type:             workplace.Social,
 		LegislationArrea: "Agro",
 	}
-
-	fmt.Println(lawyer)
+	fmt.Printf("%+v\n", lawyer)
+	lawyer.Workers.HumanInfo.CelebrateBirthday()
 	fmt.Printf("%+v\n", lawyer)
 }
