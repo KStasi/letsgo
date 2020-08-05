@@ -7,9 +7,8 @@ import (
 )
 
 func main() {
-
 	worker := workplace.Worker{
-		HumanInfo: workplace.Human{
+		Human: workplace.Human{
 			ID:        1023232,
 			FirstName: "Tom",
 			LastName:  "Ostin",
@@ -25,11 +24,11 @@ func main() {
 		Email:       "roewa@gmail.com",
 	}
 	lawyer := workplace.Lawyer{
-		Workers:          worker,
+		Worker:           worker,
 		Type:             workplace.Social,
 		LegislationArrea: "Agro",
 	}
 	fmt.Printf("%+v\n", lawyer)
-	lawyer.Workers.HumanInfo.CelebrateBirthday()
+	lawyer.CelebrateBirthday()
 	fmt.Printf("%+v\n", lawyer)
 }
